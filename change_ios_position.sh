@@ -8,7 +8,7 @@ new_output_file="command_output_${random_suffix}.txt"
 
 
 # 定义要查找的命令
-target_command="sudo python3 -u -m pymobiledevice3 remote start-quic-tunnel"
+# target_command="sudo python3 -u -m pymobiledevice3 remote start-quic-tunnel"
 
 # 使用pgrep查找相关进程的PID
 pids=$(ps -ef | grep "start-quic-tunnel" | grep -v grep | awk '{print $2 }')
@@ -37,6 +37,7 @@ while true; do
         echo "Command has finished"
         break
     fi
+    # 去除颜色和格式字符串
     input_file=$(cat "$new_output_file" | sed -r "s/\x1B\[[0-9;]*[mK]//g")
     echo "$input_file"
     echo "Waiting for RSD Address and RSD Port..."
