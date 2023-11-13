@@ -18,7 +18,7 @@
 
 ### 例子
 ```shell
-./change_ios_position.sh -27.32112 153.06814
+sudo ./change_ios_position.sh -27.32112 153.06814
 ```
 
 ## 参考
