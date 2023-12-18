@@ -10,7 +10,13 @@
    ```shell
    python3 -m pip install -U pymobiledevice3
    ```
-2. 修改位置信息
+2. 增加可执行权限
+
+   ```shell
+   chmod +x change_ios_position.sh
+   ```
+
+3. 修改位置信息
 
    ```shell
    change_ios_position.sh ${latitude} ${longitude}
