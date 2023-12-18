@@ -11,7 +11,7 @@ new_output_file="command_output_${random_suffix}.txt"
 # target_command="sudo python3 -u -m pymobiledevice3 remote start-quic-tunnel"
 
 # 使用pgrep查找相关进程的PID
-pids=$(ps -ef | grep "start-quic-tunnel" | grep -v grep | awk '{print $2 }')
+pids=$(ps -ef | grep "start-tunnel" | grep -v grep | awk '{print $2 }')
 
 # 检查是否找到相关进程
 if [ -n "$pids" ]; then
@@ -26,7 +26,7 @@ fi
 
 
 # 后台执行命令并将其存储到变量中
-nohup sudo python3 -u -m pymobiledevice3 remote start-quic-tunnel > "$new_output_file" 2>&1 &
+nohup sudo python3 -u -m pymobiledevice3 remote start-tunnel > "$new_output_file" 2>&1 &
 command_pid=$!  # 获取后台命令的PID
 echo "Command PID: $command_pid"
 
