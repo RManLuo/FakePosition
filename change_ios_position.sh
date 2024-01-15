@@ -26,7 +26,7 @@ fi
 
 
 # 后台执行命令并将其存储到变量中
-nohup sudo python3 -u -m pymobiledevice3 remote start-tunnel > "$new_output_file" 2>&1 &
+nohup sudo python3 -m pymobiledevice3 remote start-tunnel > "$new_output_file" 2>&1 &
 command_pid=$!  # 获取后台命令的PID
 echo "Command PID: $command_pid"
 
@@ -39,8 +39,8 @@ while true; do
     fi
     # 去除颜色和格式字符串
     input_file=$(cat "$new_output_file" | sed -r "s/\x1B\[[0-9;]*[mK]//g")
-    echo "$input_file"
     echo "Waiting for RSD Address and RSD Port..."
+    echo "$input_file"
     rsd_address=$(echo "$input_file" | grep -oE 'RSD Address: [^ ]+' | awk '{print $3}')
     rsd_port=$(echo "$input_file" | grep -oE 'RSD Port: [0-9]+' | awk '{print $3}')
     
