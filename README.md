@@ -2,6 +2,8 @@
 
 修改IOS设备的位置信息，支持IOS 17+。
 
+IOS 18+ 需要python>3.13，同时升级pymobiledevice3。
+
 ## 使用方法
 
 必须使用MAC电脑，使用USB连接IOS设备。
